@@ -2,7 +2,7 @@ var express = require('express')
 var app = express()
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
-  
+
 var fs = require('fs');
 var path = require('path');
 require('dotenv/config');
@@ -26,6 +26,8 @@ mongoose.connect(process.env.MONGO_URL,connectionParams)
 
     app.use(bodyParser.urlencoded({ extended: false }))
     app.use(bodyParser.json())
+
+   
 
 // Set EJS as templating engine 
 app.set("view engine", "ejs");
@@ -59,6 +61,7 @@ app.get('/', (req, res) => {
 });
 
 
+
 // Step 8 - the POST handler for processing the uploaded file
 
 app.post('/', upload.array('productImage',2), (req, res, next) => {
@@ -68,9 +71,18 @@ var images = []
         images.push(data)
     }
 
+    var category = 0;
+    if(req.body.productCategory == 'Kitchen'){
+        category = 1
+    }
+    else{
+        category = 2
+    }
+
 	var obj = {
 		productName: req.body.productName,
 		productCode: req.body.productCode,
+        productCategory: category,
         productHeight: req.body.productHeight,
         productWidth: req.body.productWidth,
         productCostPrice: req.body.productCostPrice,
@@ -89,11 +101,14 @@ var images = []
 	}
 	imgModel.create(obj, (err, item) => {
 		if (err) {
+            res.render('error');
 			console.log(err);
 		}
 		else {
-			// item.save();
-			res.redirect('/');
+           
+                res.render('success');
+            
+			
 		}
 	});
 });

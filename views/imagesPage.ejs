@@ -13,18 +13,18 @@
   </head>
   <body>
 	  <div class="form-div" style="margin:20px;padding:20px">
-		<form class="row g-3" action="/" method="POST" enctype="multipart/form-data">
+		<form class="row g-3" action="/" method="POST" enctype="multipart/form-data" autocomplete="off">
 			<div class="col-md-6">
 			  <label for="productName" class="form-label">Product Name</label>
-			  <input type="text" class="form-control" id="productName" value="" name="productName">
+			  <input type="text" class="form-control" id="productName" value="" name="productName" required>
 			</div>
 			<div class="col-md-6">
 			  <label for="productCode" class="form-label">Product Code</label>
-			  <input type="text" class="form-control" id="productCode" value="" name="productCode">
+			  <input type="text" class="form-control" id="productCode" value="" name="productCode" required>
 			</div>
 			<div class="col-md-12">
 				<label for="productCategory" class="form-label">Select Product Category</label>
-				<select id="productCategory" name="productCategory" value="" class="form-select">
+				<select id="productCategory" name="productCategory" value="" class="form-select" required>
 				  <option selected>Choose...</option>
 				  <option>Kitchen</option>
 				  <option>Bathroom</option>
@@ -32,25 +32,25 @@
 			  </div>
 			<div class="col-6">
 			  <label for="productHeight" class="form-label">Product Height</label>
-			  <input type="text" class="form-control" id="productHeight" value="" name="productHeight" placeholder="Product Height">
+			  <input type="number" class="form-control" id="productHeight" value="" name="productHeight" placeholder="Product Height" required>
 			</div>
 			<div class="col-md-6">
 			  <label for="productWidth" class="form-label">Product Width</label>
-			  <input type="text" class="form-control" id="productWidth" value="" name="productWidth">
+			  <input type="number" class="form-control" id="productWidth" value="" name="productWidth">
 			</div>
 
 			<div class="col-6">
 				<label for="productCostPrice" class="form-label">Cost Price</label>
-			  <input type="text" class="form-control" id="productCostPrice"  name="productCostPrice" placeholder="Product Cost Price">
+			  <input type="number" class="form-control" id="productCostPrice"  name="productCostPrice" placeholder="Product Cost Price" required>
 			  </div>
 			  <div class="col-md-6">
 				<label for="productRetailingPrice" class="form-label">Retailing Price</label>
-			  <input type="text" class="form-control" id="productRetailingPrice"  name="productRetailingPrice">
+			  <input type="number" class="form-control" id="productRetailingPrice"  name="productRetailingPrice" required>
 			  </div>
 			
 			<div class="col-md-12">
 			  <label for="additionalComment" class="form-label">Additional Comment</label>
-			  <input type="text" class="form-control" id="additionalComment" value="" name="additionalComment">
+			  <input type="text" class="form-control" id="additionalComment" value="" name="additionalComment" required>
 			</div>
 
 			<div class="col-md-12">
@@ -64,7 +64,6 @@
 			</div>
 		  </form>
 	  </div>
-	
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
