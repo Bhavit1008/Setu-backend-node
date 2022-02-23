@@ -71,18 +71,10 @@ var images = []
         images.push(data)
     }
 
-    var category = 0;
-    if(req.body.productCategory == 'Kitchen'){
-        category = 1
-    }
-    else{
-        category = 2
-    }
-
 	var obj = {
 		productName: req.body.productName,
 		productCode: req.body.productCode,
-        productCategory: category,
+        productCategory: req.body.productCategory,
         productHeight: req.body.productHeight,
         productWidth: req.body.productWidth,
         productCostPrice: req.body.productCostPrice,

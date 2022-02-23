@@ -14,6 +14,7 @@
   <body>
 	  <div class="form-div" style="margin:20px;padding:20px">
 		<form class="row g-3" action="/" method="POST" enctype="multipart/form-data" autocomplete="off">
+	
 			<div class="col-md-6">
 			  <label for="productName" class="form-label">Product Name</label>
 			  <input type="text" class="form-control" id="productName" value="" name="productName" required>
@@ -24,11 +25,30 @@
 			</div>
 			<div class="col-md-12">
 				<label for="productCategory" class="form-label">Select Product Category</label>
-				<select id="productCategory" name="productCategory" value="" class="form-select" required>
-				  <option selected>Choose...</option>
-				  <option>Kitchen</option>
-				  <option>Bathroom</option>
-				</select>
+				<input class="form-control" list="categoryList" name="productCategory" id="productCategory">
+					<datalist id="categoryList">
+						<option value="Chopping Board">
+						<option value="Mortar and Pestle">
+						<option value="Serving plates">
+						<option value="Coasters">
+						<option value="Wine chiller">
+						<option value="Spoon rest">
+						<option value="Cake plate">
+						<option value="Lazy Susan">
+						<option value="Towel stand">
+						<option value="Clock">
+						<option value="Pots">
+						<option value="Photo frame">
+						<option value="Cotton Box">	
+						<option value="Plates">
+						<option value="Cutlery">
+						<option value="Decoratives">
+						<option value="Mirror">
+						<option value="Table">
+						<option value="Candel stand">
+						<option value="Bathroom Set"></option>
+						<option value="Bowl">
+					</datalist>
 			  </div>
 			<div class="col-6">
 			  <label for="productHeight" class="form-label">Product Height</label>
